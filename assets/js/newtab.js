@@ -62,12 +62,26 @@ function ayat(res) {
     $('terjemah').innerHTML = res.ayat.data.id[0].teks
 }
 
+function change(surahSelect, ayatSelect) {
+    get("https://api.banghasan.com/quran/format/json/surat/" + surahSelect + "/ayat/" + ayatSelect, ayat)
+
+}
+
 window.onload = function () {
+    surahSelected = 1
     // event surah
     $('listSurah').addEventListener('change', function () {
-
-        get("https://api.banghasan.com/quran/format/json/surat/" + this.value, listAyat)
+        surahSelected = this.value
+        change(surahSelected, 1)
+        get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected, listAyat)
     })
+
+    // event ayat
+    $('listAyat').addEventListener('change',
+        function () {
+            change(surahSelected, this.value)
+            // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
+        })
 
     get("https://api.banghasan.com/quran/format/json/surat/1/ayat/1", ayat)
     get("https://api.banghasan.com/quran/format/json/surat", listsurah)
