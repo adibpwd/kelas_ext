@@ -2,6 +2,8 @@ body {
     background-image: url(/assets/img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -20,7 +22,14 @@ body {
     overflow: auto;
     text-align: center;
     margin: 0 auto;
-    margin-top: 30vh;
+    margin-top: 6vh;
+    transition: 4s;
+}
+
+.wrap-ayat:hover {
+    border-radius: 70px;
+    transition: 0.7s;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 span {
@@ -43,15 +52,17 @@ span {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     transition: 2s;
+    margin-left: -9;
 }
 
 #prev:hover {
     padding: 11px 35px;
-    background-color: rgba(89, 0, 255, 0.2);
+    background-color: rgba(0, 255, 98, 0.4);
     border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 20px;
     transition: 0.2s;
     margin-right: -30px;
+    color: white;
 }
 
 #prev:active {
@@ -65,20 +76,84 @@ span {
     padding: 10px 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    margin-left: 442px;
+    margin-left: 420px;
     transition: 2s;
 }
 
 #next:hover {
     padding: 11px 35px;
-    background-color: rgba(89, 0, 255, 0.2);
+    background-color: rgba(0, 255, 98, 0.4);
     border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 20px;
     transition: 0.4s;
+    color: white;
+    margin-left: 390px;
 }
 
 #next:active {
     padding: 11px 35px;
     background-color: rgba(255, 255, 25, 0.7);
     transition: 0.1s;
+}
+
+.sholat {
+    text-align: center;
+
+}
+
+.name_sholat {
+    color: white;
+}
+
+.time_sholat {
+    color: white;
+}
+
+.nts {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    transition: 0.9s;
+}
+
+.nts:hover {
+    background-color: rgba(78, 155, 255, 0.5);
+    padding: 17px;
+    border-radius: 50px;
+}
+
+.nts:hover .name_sholat {
+    font-size: 10px;
+    font-family: 'Bungee Inline';
+    padding: 1px;
+    transition: 0.9s;
+}
+
+/* .image {
+    display: inline-block;
+    width: 300px;
+    height: 84px;
+    margin-left: 544px;
+    overflow: hidden;
+}
+
+
+.image_logo {
+    border-radius: 17px;
+    width: 90px;
+    height: 84px;
+    overflow: scroll;
+} */
+
+#lb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 5px 0 0 17px;
+    width: 300px;
+    height: 20px;
+    float: right;
+    margin-right: -82px;
+    margin-top: -21px;
 }
