@@ -62,6 +62,20 @@ function listsurah(res) {
     $('listSurah').appendChild(msgContainer)
 }
 
+function jumlahAyat(res) {
+    // console.log(res);
+
+    var msgContainer = document.createDocumentFragment()
+
+    for (var i = 0; i < res.hasil.length; i++) {
+        msgContainer.appendChild(create('option', {
+            text: res.hasil[i].ayat,
+            value: res.hasil[i].nomor
+        }))
+    }
+    $('jumlahAyat').appendChild(msgContainer)
+}
+
 function listAyat(res) {
     // console.log(res);
     $('listAyat').innerHTML = ""
@@ -109,14 +123,14 @@ window.onload = function () {
             // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
         })
 
-    $('prev').addEventListener('click',
+    $('prev').addEventListener('Click',
         function () {
             ayatSelected = ayatSelected - 1
             change(surahSelected, ayatSelected)
             // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
         })
 
-        $('next').addEventListener('click',
+    $('next').addEventListener('click',
         function () {
             ayatSelected = ayatSelected + 1
             change(surahSelected, ayatSelected)
@@ -125,6 +139,7 @@ window.onload = function () {
 
     get("https://api.banghasan.com/quran/format/json/surat/1/ayat/1", ayat)
     get("https://api.banghasan.com/quran/format/json/surat", listsurah)
+    get("https://api.banghasan.com/quran/format/json/surat", jumlahAyat)
     get("https://api.banghasan.com/quran/format/json/surat/1", listAyat)
     get("https://api.banghasan.com/sholat/format/json/kota/nama/yogyakarta", locbirth)
 }
