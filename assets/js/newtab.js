@@ -1,4 +1,3 @@
-
 // var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
 // var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
@@ -89,8 +88,13 @@ function change(surahSelect, ayatSelect) {
 
 }
 
+function next() {
+    $('listAyat')
+}
+
 window.onload = function () {
     surahSelected = 1
+    ayatSelected = 1
     // event surah
     $('listSurah').addEventListener('change', function () {
         surahSelected = this.value
@@ -105,7 +109,42 @@ window.onload = function () {
             // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
         })
 
+    $('prev').addEventListener('click',
+        function () {
+            ayatSelected = ayatSelected - 1
+            change(surahSelected, ayatSelected)
+            // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
+        })
+
+        $('next').addEventListener('click',
+        function () {
+            ayatSelected = ayatSelected + 1
+            change(surahSelected, ayatSelected)
+            // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
+        })
+
     get("https://api.banghasan.com/quran/format/json/surat/1/ayat/1", ayat)
     get("https://api.banghasan.com/quran/format/json/surat", listsurah)
     get("https://api.banghasan.com/quran/format/json/surat/1", listAyat)
+    get("https://api.banghasan.com/sholat/format/json/kota/nama/yogyakarta", locbirth)
+}
+
+// var kikuk = document.getElementById("indonesia");
+
+// function berubah() {
+//     kikuk.backgroundColor='red';
+// }
+
+// kikuk.onclick = function () {
+//     berubah()
+// }
+
+// kikuk.addEventListener('click', berubah());
+
+// function berubah1(id) {
+//     id.innerHTML = "gokil";
+// }
+
+function changeText(id) {
+    id.innerHTML = "iofk!";
 }
