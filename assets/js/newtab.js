@@ -127,6 +127,7 @@ window.onload = function () {
         function () {
             ayatSelected = ayatSelected - 1
             change(surahSelected, ayatSelected)
+            $('listAyat').value = ayatSelected
             // get("https://api.banghasan.com/quran/format/json/surat/" + surahSelected + "/ayat/" + this.value, ayat)
         })
 
@@ -141,7 +142,7 @@ window.onload = function () {
     get("https://api.banghasan.com/quran/format/json/surat", listsurah)
     get("https://api.banghasan.com/quran/format/json/surat", jumlahAyat)
     get("https://api.banghasan.com/quran/format/json/surat/1", listAyat)
-    get("https://api.banghasan.com/sholat/format/json/kota/nama/yogyakarta", locbirth)
+    // get("https://api.banghasan.com/sholat/format/json/kota/nama/yogyakarta", locbirth)
 }
 
 // var kikuk = document.getElementById("indonesia");
