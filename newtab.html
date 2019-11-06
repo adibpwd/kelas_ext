@@ -9,6 +9,22 @@
     <script src="assets/js/newtab.js"></script>
     <link rel="stylesheet" href="/assets/css/newtab.css">
     <link href='https://fonts.googleapis.com/css?family=Bungee Inline' rel='stylesheet'>
+    <style>
+        .search-input input,
+        .search input {
+            width: 94.7%;
+            padding: 11px 0 12px 1em;
+            color: #333;
+            outline: none;
+            height: 20px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            overflow: hidden;
+        margin-left: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,7 +95,12 @@
                 class="image_logo"></a>
         <a href="https://duolingo.com"><img src="/assets/img/duolingo.gif" alt="duolingo" class="image_logo"></a>
     </div> -->
-
+    <form action="https://www.google.com/search" id="searchform" method="get" target="_top">
+        <div class="search-input">
+            <input aria-label="Search this blog..." autocomplete="off" name="q" placeholder="Search this blog..."
+                required="required" value="" autofocus/>
+            <input name="as_sitesearch" type="hidden" />
+        </div>
 </body>
 
 </html>
